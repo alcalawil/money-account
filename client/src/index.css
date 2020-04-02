@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin-top: 5vw;
+}
+
+.TransactionForm {
+  margin-bottom: 2em;
+}
+
