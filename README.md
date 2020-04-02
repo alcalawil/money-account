@@ -5,7 +5,7 @@ API service
 ## Usage
 
 1. `git clone https://github.com/alcalawil/money-account.git`
-2. `cd express-api/api`
+2. `cd money-account/api`
 3. `npm i`
 4. `npm start`
 
@@ -13,7 +13,7 @@ API service
 
 - Go to client folder `cd ./client`
 - `npm i`
-- `node client.js "some text"`
+- `npm start"`
 
 ## Run tests
 
@@ -28,4 +28,5 @@ API service
 
 ## TODO
 
-- Use chai
+- Add client Dockerfile
+- Add Docker composer
