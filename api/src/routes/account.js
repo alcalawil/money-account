@@ -76,9 +76,7 @@ router.get("/transactions", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const balance = await accountService.getBalance("default_account");
-    res.status(200).json({
-      balance
-    });
+    res.status(200).json(balance);
   } catch (err) {
     // TODO: Use a robust logger
     console.debug("/transaction/:id", err);

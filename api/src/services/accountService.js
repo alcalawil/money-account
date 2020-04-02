@@ -19,7 +19,10 @@ class AccountService {
         : accum + trans.amount;
     }, 0);
 
-    return balance;
+    return {
+      currency: "USD",
+      amount: balance
+    };
   }
 
   async getTransaction(id) {
