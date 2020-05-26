@@ -17,9 +17,9 @@ router.post("/transaction", async (req, res) => {
     });
   }
 
-  if (amount < 0) {
+  if (typeof amount !== "number" || amount < 0) {
     return res.status(400).json({
-      error: "amount cannot be negative"
+      error: "Invalid amount"
     });
   }
 

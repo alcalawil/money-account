@@ -2,6 +2,7 @@ const { v4: uuid } = require("uuid");
 
 class AccountStore {
   constructor() {
+    this.locked = false;
     this.transactions = [
       // First mocked transaction
       {
@@ -30,6 +31,7 @@ class AccountStore {
   }
 
   async saveNewTransaction(type, amount) {
+    this.locked = true;
     const transaction = {
       id: uuid(),
       type,
@@ -40,11 +42,12 @@ class AccountStore {
     try {
       // insert into db
       this.transactions.push(transaction);
+      this.locked = false;
+      return transaction;
     } catch (err) {
+      this.locked = false;
       throw new Error(`DB Error: saveNewTransaction - ${err.message}`);
     }
-
-    return transaction;
   }
 }
 

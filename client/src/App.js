@@ -9,23 +9,23 @@ export const TransactionContext = createContext();
 class App extends Component {
   state = {
     data: {
-      transactions: []
-    }
+      transactions: [],
+    },
   };
 
   componentDidMount() {
     Axios.get("http://localhost:5000/api/v1/account/transactions")
-      .then(response => {
+      .then((response) => {
         if (response.status >= 400) {
           throw response;
         }
 
         this.setState({
           ...this.state,
-          data: { ...this.state.data, transactions: response.data }
+          data: { ...this.state.data, transactions: response.data },
         });
       })
-      .catch(err => {
+      .catch((err) => {
         switch (err.status) {
           case 400:
             console.log(err);
@@ -39,7 +39,7 @@ class App extends Component {
       );
   }
 
-  handleChange = data => {
+  handleChange = (data) => {
     this.setState({ ...this.state, data });
   };
 

@@ -62,7 +62,7 @@ export class TransactionForm extends Component {
       ...this.state,
       form: {
         ...this.state.form,
-        [name]: value
+        [name]: Number(value)
       }
     });
   };
