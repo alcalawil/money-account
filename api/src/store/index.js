@@ -9,7 +9,8 @@ class AccountStore {
         id: "fcd21290-6a6e-4986-87ed-437eda739b83",
         type: "credit",
         amount: 0,
-        effectiveDate: "2020-04-02T00:15:26.765Z"
+        effectiveDate: "2020-04-02T00:15:26.765Z",
+        status: "PROCESSING"
       }
     ];
   }
@@ -36,7 +37,8 @@ class AccountStore {
       id: uuid(),
       type,
       amount,
-      effectiveDate: new Date().toISOString()
+      effectiveDate: new Date().toISOString(),
+      status: "PROCESSING"
     };
 
     try {
